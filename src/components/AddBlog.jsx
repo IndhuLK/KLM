@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import { db, storage } from "../firebase/config";
-import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
+import { collection, addDoc, updateDoc, doc, getDoc, serverTimestamp } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -9,7 +9,6 @@ const AddBlog = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // 🧠 Single state for all fields
   const [formData, setFormData] = useState({
     title: "",
     subtitle: "",
@@ -21,7 +20,6 @@ const AddBlog = () => {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // 🧩 Load blog data if editing
   useEffect(() => {
     const fetchBlog = async () => {
       if (!id) return;
@@ -45,19 +43,15 @@ const AddBlog = () => {
     fetchBlog();
   }, [id]);
 
-  // 🖼️ Handle image selection
   const handleImageChange = (e) => {
     const selectedFile = e.target.files[0];
     if (!selectedFile) return;
-
     setFile(selectedFile);
     setPreview(URL.createObjectURL(selectedFile));
   };
 
-  // 📤 Upload image to Firebase Storage
   const uploadImageToFirebase = async () => {
-    if (!file) return formData.image; // reuse old image if not changed
-
+    if (!file) return formData.image;
     const uniqueName = `blogImages/blogImage_${Date.now()}`;
     const imageRef = ref(storage, uniqueName);
     await uploadBytes(imageRef, file);
@@ -65,13 +59,11 @@ const AddBlog = () => {
     return downloadURL;
   };
 
-  // 🧾 Handle input change (dynamic)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // 💾 Save or update blog
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.title.trim() || !formData.description.trim()) {
@@ -87,6 +79,7 @@ const AddBlog = () => {
         ...formData,
         image: imageUrl,
         date: new Date().toLocaleDateString(),
+        createdAt: serverTimestamp(), // ✅ Added for sorting
       };
 
       if (id) {
@@ -104,10 +97,7 @@ const AddBlog = () => {
     } finally {
       setLoading(false);
     }
-    
-
   };
-  
 
   return (
     <div className="flex bg-gray-50 min-h-screen">
@@ -129,7 +119,6 @@ const AddBlog = () => {
           onSubmit={handleSubmit}
           className="bg-white shadow-lg rounded-xl p-8 max-w-4xl border border-gray-100"
         >
-          {/* Title */}
           <div className="mb-5">
             <label className="block text-gray-700 font-semibold mb-2">
               Blog Title <span className="text-[#EC3338]">*</span>
@@ -145,7 +134,6 @@ const AddBlog = () => {
             />
           </div>
 
-          {/* Subtitle */}
           <div className="mb-5">
             <label className="block text-gray-700 font-semibold mb-2">
               Subtitle
@@ -160,7 +148,6 @@ const AddBlog = () => {
             />
           </div>
 
-          {/* Description */}
           <div className="mb-5">
             <label className="block text-gray-700 font-semibold mb-2">
               Description <span className="text-[#EC3338]">*</span>
@@ -176,12 +163,10 @@ const AddBlog = () => {
             ></textarea>
           </div>
 
-          {/* Image Upload */}
           <div className="mb-8">
             <label className="block text-gray-700 font-semibold mb-3">
               Upload Blog Image
             </label>
-
             <div className="flex items-center gap-6">
               <div className="flex-1">
                 <input
@@ -199,11 +184,7 @@ const AddBlog = () => {
               {preview && (
                 <div className="flex flex-col items-center">
                   <div className="w-28 h-28 border rounded-lg overflow-hidden shadow-sm mb-2">
-                    <img
-                      src={preview}
-                      alt="Preview"
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={preview} alt="Preview" className="w-full h-full object-cover" />
                   </div>
                   <button
                     type="button"
@@ -221,7 +202,6 @@ const AddBlog = () => {
             </div>
           </div>
 
-          {/* Submit Button */}
           <div className="flex justify-start">
             <button
               type="submit"

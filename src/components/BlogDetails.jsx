@@ -1,83 +1,69 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { db } from "/src/firebase/config";
-import { doc, getDoc } from "firebase/firestore";
+import { collection, getDoc, getDocs, doc, query, orderBy } from "firebase/firestore";
 
 const BlogDetails = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
+  const [allBlogs, setAllBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // 🔥 Fetch a single blog from Firestore by ID
   useEffect(() => {
-    const fetchBlog = async () => {
+    const fetchData = async () => {
       try {
         const docRef = doc(db, "blogs", id);
         const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) setBlog({ id: docSnap.id, ...docSnap.data() });
 
-        if (docSnap.exists()) {
-          setBlog(docSnap.data());
-        } else {
-          console.error("❌ Blog not found!");
-        }
-      } catch (error) {
-        console.error("Error fetching blog:", error);
+        const q = query(collection(db, "blogs"), orderBy("createdAt", "desc"));
+        const allSnap = await getDocs(q);
+        const all = allSnap.docs.map((d) => ({ id: d.id, ...d.data() }));
+        setAllBlogs(all);
+      } catch (err) {
+        console.error(err);
       } finally {
         setLoading(false);
       }
     };
-
-    fetchBlog();
+    fetchData();
   }, [id]);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex justify-center items-center text-gray-600">
-        Loading blog details...
-      </div>
-    );
-  }
-
-  if (!blog) {
-    return (
-      <div className="min-h-screen flex flex-col justify-center items-center text-gray-600">
-        <p>Blog not found.</p>
-        <Link to="/" className="text-[#EC3338] mt-4 underline">
-          Back to Blogs
-        </Link>
-      </div>
-    );
-  }
+  if (loading) return <p className="text-center py-16 text-gray-500">Loading...</p>;
+  if (!blog) return <p className="text-center py-16 text-gray-500">Blog not found</p>;
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      {blog.image && (
-        <img
-          src={blog.image}
-          alt={blog.title}
-          className="w-full h-72 object-cover rounded-xl shadow-md mb-8"
-        />
-      )}
-      <h1 className="text-3xl font-bold text-[#EC3338] mb-3 font-poppins">
-        {blog.title}
-      </h1>
-      {blog.description && (
-        <p className="text-lg text-gray-700 mb-3 font-inter">
+    <div className="flex flex-col md:flex-row max-w-6xl mx-auto p-6 gap-8">
+      <div className="flex-1 bg-white rounded-xl shadow-md p-6">
+        {blog.image && <img src={blog.image} className="w-full h-80 object-cover rounded-lg mb-6" />}
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">{blog.title}</h1>
+        <p className="text-gray-500 text-sm mb-4">{blog.date}</p>
+        <p className="text-gray-700 text-base leading-relaxed whitespace-pre-line">
           {blog.description}
         </p>
-      )}
-      <p className="text-sm text-gray-500 mb-6">Posted on {blog.date}</p>
-      <p className="text-gray-900 leading-relaxed mb-8 font-inter text-base md:text-lg">
-        {blog.content}
-      </p>
+      </div>
 
-      <Link
-        to="/"
-        className="inline-block bg-black text-white px-5 py-2 rounded-md 
-        hover:bg-[#d12b2f] transition-all"
-      >
-        Back to Blogs
-      </Link>
+      <aside className="w-full md:w-1/3 bg-white rounded-xl shadow-md p-6 h-fit">
+        <h2 className="text-xl font-semibold text-[#EC3338] mb-4">All Blogs</h2>
+        <div className="flex flex-col gap-4">
+          {allBlogs.map((b) => (
+            <Link
+              key={b.id}
+              to={`/blog/${b.id}`}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className={`flex items-center gap-3 p-3 rounded-lg ${
+                b.id === id ? "bg-pink-100" : "hover:bg-gray-100"
+              }`}
+            >
+              {b.image && <img src={b.image} className="w-16 h-16 object-cover rounded-md" />}
+              <div>
+                <h3 className="text-sm font-semibold text-gray-800">{b.title}</h3>
+                <p className="text-xs text-gray-500">{b.date}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </aside>
     </div>
   );
 };
