@@ -15,7 +15,7 @@ const Navbar = () => {
           <a href="/" className="hover:text-red-700">Home</a>
           <a href="/uniforms" className="hover:text-red-700">Uniforms</a>
           <a href="/socks" className="hover:text-red-700">Socks & Accessories</a>
-          <a href="#" className="hover:text-red-700">Jackets & Coats</a>
+          <a href="/jacketcoats" className="hover:text-red-700">Jackets & Coats</a>
         </div>
 
         {/* Logo Center */}
@@ -23,15 +23,15 @@ const Navbar = () => {
           <img
             src={logo} // replace with your logo path
             alt="KLM Logo"
-            className="h-10 mx-auto"
+            className="h-20 w-20 "
           />
-          <p className="text-xs font-semibold text-red-700 mt-1">SINCE 1959</p>
+         
         </div>
 
         {/* Right Menu (Desktop Only) */}
         <div className="hidden md:flex items-center space-x-8 font-semibold text-sm">
           <a href="/fabric" className="hover:text-red-700">Fabric</a>
-          <a href="#" className="hover:text-red-700">Sports Wear</a>
+          <a href="/sports" className="hover:text-red-700">Sports Wear</a>
           <a href="/shoe" className="hover:text-red-700">Institutional Shoes</a>
         </div>
 
@@ -58,9 +58,9 @@ const Navbar = () => {
             <a href="/" className="hover:text-red-700">Home</a>
             <a href="/uniforms" className="hover:text-red-700">Uniforms</a>
             <a href="/socks" className="hover:text-red-700">Socks & Accessories</a>
-            <a href="#" className="hover:text-red-700">Jackets & Coats</a>
+            <a href="/jacketcoats" className="hover:text-red-700">Jackets & Coats</a>
             <a href="/fabric" className="hover:text-red-700">Fabric</a>
-            <a href="#" className="hover:text-red-700">Sports Wear</a>
+            <a href="/sports" className="hover:text-red-700">Sports Wear</a>
             <a href="/shoe" className="hover:text-red-700">Institutional Shoes</a>
             <div className="flex space-x-4 pt-2 text-red-700">
               <FaFacebookF />

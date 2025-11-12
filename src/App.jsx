@@ -10,6 +10,13 @@ import SocksPage from './pages/Socks/SocksPage';
 import BlogSection from './components/BlogSection';
 import BlogDetails from './components/BlogDetails';
 import Footer from './components/Footer';
+import JacketsPage from './pages/Jackets/JacketsPage';
+import SportsPage from './pages/SportsWear/SportsPage';
+import LogIn from './components/LogIn';
+import Dashboard from './components/Dashboard';
+import AddBlog from './components/AddBlog';
+import PreviewBlog from './components/PreviewBlog';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,8 +30,14 @@ function App() {
       <Route path='/fabric' element={<FabricPage/>} />
       <Route path='/shoe' element={<ShoesPage/>} />
       <Route path='/socks' element={<SocksPage/>} />
+      <Route path='/jacketcoats' element={<JacketsPage/>} />
+      <Route path='/sports' element={<SportsPage/>} />
       <Route path='/blog' element={<BlogSection/>} />
       <Route path="/blog/:id" element={<BlogDetails />} />
+      <Route path="/login" element={<LogIn/>} />
+      <Route path="/dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>} />
+      <Route path="/add-blog" element={<ProtectedRoute ><AddBlog/></ProtectedRoute>} />
+      <Route path="/preview-blog" element={<ProtectedRoute><PreviewBlog/></ProtectedRoute>} />
 
     </Routes>
     <Footer />
