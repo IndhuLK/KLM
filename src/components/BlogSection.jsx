@@ -33,9 +33,10 @@ const BlogSection = () => {
 
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {blogs.map((blog) => (
-            <div key={blog.id} className="bg-white rounded-2xl shadow hover:shadow-md transition-all overflow-hidden">
+            <div key={blog.id} className="bg-white rounded-2xl shadow hover:shadow-md 
+            transition-all overflow-hidden">
               {blog.image && (
-                <img src={blog.image} alt={blog.title} className="w-full h-48 object-cover" />
+                <img src={blog.image} alt={blog.title} className="w-full h-58 object-contain" />
               )}
               <div className="p-5">
                 <h3 className="font-semibold text-gray-800 text-sm md:text-base mb-3">{blog.title}</h3>

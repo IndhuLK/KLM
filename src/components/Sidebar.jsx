@@ -10,7 +10,7 @@ const Sidebar = () => {
   const PRIMARY_RED = "#EC3338";
 
   const menu = [
-    { name: "Dashboard", icon: <Home />, path: "/dashboard" },
+    
     { name: "Add Blog", icon: <FilePlus2 />, path: "/add-blog" },
     { name: "Preview Blog", icon: <Eye />, path: "/preview-blog" },
   ];

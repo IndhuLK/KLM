@@ -1,16 +1,19 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ArrowDown } from "lucide-react";
 
-import socks1 from "/src/assets/socks.png"; // 🧦 main image
-import socks2 from "/src/assets/6.png"; // 🧦 second image
-import socks3 from "/src/assets/socks2.jpg"; // 🧦 third image
+import socks1 from "/src/assets/socks.png"; 
+import socks2 from "/src/assets/6.png"; 
+import socks3 from "/src/assets/socks2.jpg"; 
 
-// ✅ Custom Dots (Right side vertical)
+// ✅ Custom pagination dots on the right
 const CustomDots = ({ currentSlide, slideCount, goToSlide }) => (
-  <div className="absolute top-1/2 right-6 transform -translate-y-1/2 flex flex-col space-y-3 z-20">
+  <div
+    className="absolute top-1/2 right-6 transform -translate-y-1/2 flex 
+  flex-col space-y-3 z-20"
+  >
     {Array.from({ length: slideCount }).map((_, i) => (
       <button
         key={i}
@@ -18,7 +21,7 @@ const CustomDots = ({ currentSlide, slideCount, goToSlide }) => (
         className={`w-4 h-4 rounded-full border-2 transition-all duration-300 ${
           currentSlide === i
             ? "bg-[#EC3338] border-[#EC3338] scale-110 shadow-md"
-            : "border-white hover:bg-white/40"
+            : "border-white hover:bg-white/50"
         }`}
       />
     ))}
@@ -58,60 +61,73 @@ const SocksSlider = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: false,
-    beforeChange: (_, newIndex) => setCurrentSlide(newIndex),
+    beforeChange: (_, next) => setCurrentSlide(next),
   };
 
-  useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
-  }, []);
-
   return (
-    <section
-      className="relative w-full h-[500px] md:h-[650px] overflow-hidden"
-      style={{
-        background: "radial-gradient(circle, #fff8ef 0%, #ffe7d2 100%)",
-      }}
-    >
-      {/* 🔴 Gradient Overlay for Depth */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10"></div>
+    <section className="relative w-full h-[500px] md:h-[650px] overflow-hidden">
+      {/* Background Pattern Overlay */}
+      <div
+        className="absolute inset-0 z-10 opacity-10"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, #b70b0b 1.5px, transparent 1.5px)",
+          backgroundSize: "18px 18px",
+        }}
+      ></div>
 
-      {/* Slider */}
+      {/* Slider Section */}
       <Slider ref={sliderRef} {...settings}>
         {slides.map((slide, i) => (
           <div key={i}>
             <div
-              className="relative w-full h-[500px] md:h-[650px] flex items-center justify-center bg-cover bg-center"
+              className="relative w-full h-[500px] md:h-[650px] flex flex-col items-center 
+              justify-center text-center bg-cover bg-center"
               style={{
                 backgroundImage: `url(${slide.image})`,
-                backgroundSize: "cover",
+                backgroundSize: "90%", // 100% = no zoom, 120% = slight zoom
                 backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
               }}
             >
-              {/* ✨ Light Overlay on Image */}
-              <div className="absolute inset-0 bg-black/25 mix-blend-multiply z-[5]" />
+              {/* Gradient overlay for readability */}
+              <div
+                className="absolute inset-0 bg-gradient-to-tl from-black/30 via-black/30 
+              to-transparent z-[5]"
+              />
 
-              {/* 🩶 Text Content */}
-              <div className="relative z-20 text-center text-white px-6 md:px-16">
+              {/* Text Content */}
+              <div className="relative z-20 text-[#ffffff] px-6 md:px-16 max-w-4xl">
                 <h1
-                  className="text-3xl md:text-6xl font-extrabold mb-3 tracking-tight drop-shadow-[0_3px_6px_rgba(0,0,0,0.4)] animate-fadeIn"
+                  className="text-3xl md:text-6xl font-extrabold mb-4 leading-tight 
+                  drop-shadow-lg animate-fadeIn"
                   data-aos="fade-up"
                 >
                   {slide.title}
                 </h1>
                 <p
-                  className="text-base md:text-2xl font-light tracking-wide text-white/90 animate-slideUp max-w-3xl mx-auto"
+                  className="text-base md:text-2xl font-medium tracking-wide text-white 
+                  leading-relaxed animate-slideUp"
                   data-aos="fade-up"
-                  data-aos-delay="150"
+                  data-aos-delay="200"
                 >
                   {slide.subtitle}
                 </p>
+
+                {/* CTA Button */}
+                <button
+                  className="mt-6 bg-black text-white px-6 py-3 rounded-full font-semibold 
+                  text-sm md:text-base  hover:bg-[#EC3338] transition-all duration-300 shadow-lg"
+                >
+                  Explore Our Range
+                </button>
               </div>
             </div>
           </div>
         ))}
       </Slider>
 
-      {/* Right Side Dots */}
+      {/* Custom Right Dots */}
       <CustomDots
         currentSlide={currentSlide}
         slideCount={slides.length}
@@ -119,27 +135,26 @@ const SocksSlider = () => {
       />
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white/90 animate-bounce z-20">
+      <div
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white/90 
+      animate-bounce z-30"
+      >
         <ArrowDown className="w-6 h-6 text-[#EC3338]" />
       </div>
 
-      {/* ✨ Animations */}
+      {/* Animation Keyframes */}
       <style>{`
         @keyframes fadeIn {
-          0% { opacity: 0; transform: translateY(20px); }
+          0% { opacity: 0; transform: translateY(25px); }
           100% { opacity: 1; transform: translateY(0); }
         }
-        .animate-fadeIn {
-          animation: fadeIn 1.2s ease-out forwards;
-        }
+        .animate-fadeIn { animation: fadeIn 1.5s ease-out forwards; }
 
         @keyframes slideUp {
           0% { opacity: 0; transform: translateY(40px); }
           100% { opacity: 1; transform: translateY(0); }
         }
-        .animate-slideUp {
-          animation: slideUp 1.4s ease-out forwards;
-        }
+        .animate-slideUp { animation: slideUp 1.8s ease-out forwards; }
       `}</style>
     </section>
   );

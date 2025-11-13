@@ -35,7 +35,7 @@ const BlogDetails = () => {
   return (
     <div className="flex flex-col md:flex-row max-w-6xl mx-auto p-6 gap-8">
       <div className="flex-1 bg-white rounded-xl shadow-md p-6">
-        {blog.image && <img src={blog.image} className="w-full h-80 object-cover rounded-lg mb-6" />}
+        {blog.image && <img src={blog.image} className="w-full h-100 object-contain rounded-lg mb-6" />}
         <h1 className="text-3xl font-bold text-gray-800 mb-2">{blog.title}</h1>
         <p className="text-gray-500 text-sm mb-4">{blog.date}</p>
         <p className="text-gray-700 text-base leading-relaxed whitespace-pre-line">
@@ -55,7 +55,7 @@ const BlogDetails = () => {
                 b.id === id ? "bg-pink-100" : "hover:bg-gray-100"
               }`}
             >
-              {b.image && <img src={b.image} className="w-16 h-16 object-cover rounded-md" />}
+              {b.image && <img src={b.image} className="w-26 h-26 object-cover rounded-md" />}
               <div>
                 <h3 className="text-sm font-semibold text-gray-800">{b.title}</h3>
                 <p className="text-xs text-gray-500">{b.date}</p>

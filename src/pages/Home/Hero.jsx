@@ -9,8 +9,10 @@ import uni3 from "/src/assets/Uni1.jpg";
 
 // ✅ Custom pagination dots on the right
 const CustomDots = ({ currentSlide, slideCount, goToSlide }) => (
-  <div className="absolute top-1/2 right-6 transform -translate-y-1/2 flex 
-  flex-col space-y-3 z-20">
+  <div
+    className="absolute top-1/2 right-6 transform -translate-y-1/2 flex 
+  flex-col space-y-3 z-20"
+  >
     {Array.from({ length: slideCount }).map((_, i) => (
       <button
         key={i}
@@ -80,11 +82,18 @@ const Hero = () => {
             <div
               className="relative w-full h-[500px] md:h-[650px] flex flex-col items-center 
               justify-center text-center bg-cover bg-center"
-              style={{ backgroundImage: `url(${slide.image})` }}
+              style={{
+                backgroundImage: `url(${slide.image})`,
+                backgroundSize: "90%", // 100% = no zoom, 120% = slight zoom
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
             >
               {/* Gradient overlay for readability */}
-              <div className="absolute inset-0 bg-gradient-to-tl from-black/70 via-black/30 
-              to-transparent z-[5]" />
+              <div
+                className="absolute inset-0 bg-gradient-to-tl from-black/30 via-black/30 
+              to-transparent z-[5]"
+              />
 
               {/* Text Content */}
               <div className="relative z-20 text-[#ffffff] px-6 md:px-16 max-w-4xl">
@@ -108,7 +117,6 @@ const Hero = () => {
                 <button
                   className="mt-6 bg-black text-white px-6 py-3 rounded-full font-semibold 
                   text-sm md:text-base  hover:bg-[#EC3338] transition-all duration-300 shadow-lg"
-                 
                 >
                   Explore Our Range
                 </button>
@@ -126,8 +134,10 @@ const Hero = () => {
       />
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white/90 
-      animate-bounce z-30">
+      <div
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white/90 
+      animate-bounce z-30"
+      >
         <ArrowDown className="w-6 h-6 text-[#EC3338]" />
       </div>
 

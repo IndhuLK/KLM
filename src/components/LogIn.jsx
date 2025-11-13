@@ -38,7 +38,7 @@ const LogIn = () => {
       // Optional: redirect to dashboard
       setTimeout(() => {
          localStorage.setItem("auth", "true");
-        window.location.href = "/dashboard"; // Change to your route
+        window.location.href = "/add-blog"; // Change to your route
       }, 1000);
     } else {
       setError("Invalid username or password. Try again.");
