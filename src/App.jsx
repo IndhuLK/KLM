@@ -25,13 +25,13 @@ function App() {
     <BrowserRouter>
     <Navbar />
     <Routes>
-      <Route path='/' element={<Home />} />
+      <Route path='/home' element={<Home />} />
       <Route path='/uniforms' element={<UniformPage/>} />
       <Route path='/fabric' element={<FabricPage/>} />
-      <Route path='/shoe' element={<ShoesPage/>} />
-      <Route path='/socks' element={<SocksPage/>} />
+      <Route path='/institutionalshoes' element={<ShoesPage/>} />
+      <Route path='/socksandaccessories' element={<SocksPage/>} />
       <Route path='/jacketcoats' element={<JacketsPage/>} />
-      <Route path='/sports' element={<SportsPage/>} />
+      <Route path='/sportswear' element={<SportsPage/>} />
       <Route path='/blog' element={<BlogSection/>} />
       <Route path="/blog/:id" element={<BlogDetails />} />
       <Route path="/login" element={<LogIn/>} />

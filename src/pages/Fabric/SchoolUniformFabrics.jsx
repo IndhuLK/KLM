@@ -35,36 +35,38 @@ const SchoolUniformFabrics = () => {
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
         
-        {/* LEFT SIDE: CREATIVE IMAGE BLOCK (Layered Effect) */}
-        <div
-          className="relative w-full md:w-5/12 flex items-center justify-center h-[550px]"
-          data-aos="fade-right"
-        >
-          {/* Layer 1: Bottom Shadow/Shape (Black) */}
-          <div
-            className="absolute w-72 h-80 rounded-2xl transform rotate-3"
-            style={{ backgroundColor: ACCENT_BLACK, opacity: 0.7, top: '25%', left: '10%' }}
-          ></div>
+        {/* LEFT SIDE — PREMIUM SOFT CIRCLE GLOW DESIGN */}
+<div
+  className="relative w-full md:w-5/12 flex items-center justify-center h-[550px]"
+  data-aos="fade-right"
+>
 
-          {/* Layer 2: Deep Red Backing */}
-          <div
-            className="absolute w-72 h-80 rounded-2xl shadow-2xl"
-            style={{ backgroundColor: PRIMARY_RED, top: '15%', left: '5%', 
-              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)' }}
-          ></div>
+  {/* 🔵 Soft Circle Glow Behind Image */}
+  <div
+    className="absolute w-80 h-80 rounded-full opacity-40 blur-3xl"
+    style={{
+      background: "radial-gradient(circle, #EC3338 0%, #FFC991 100%)",
+      top: "15%",
+      left: "5%"
+    }}
+  ></div>
 
-          {/* Layer 3: Image Card (Floating) */}
-          <div className="relative z-10 w-fit h-80 top-0 left-0">
-            <img
-              src={fabricImg}
-              alt="Top-Notch Uniform Fabrics"
-              className="w-full h-full object-cover rounded-2xl shadow-xl transition-transform 
-              duration-500 hover:scale-[1.05]"
-              data-aos="zoom-in"
-              data-aos-delay="300"
-            />
-          </div>
-        </div>
+  {/* 📸 MAIN IMAGE CARD */}
+  <div className="relative w-100 h-[420px] rounded-3xl overflow-hidden shadow-2xl
+   bg-white z-10 shadow-red-300">
+    <img
+      src={fabricImg}
+      alt="Premium Fabrics"
+      className="w-full h-full object-cover"
+    />
+
+    {/* Label Tag */}
+    <div className="absolute bottom-4 right-4 px-3 py-1 bg-black/80 text-white text-xs rounded-full shadow">
+      Premium Fabrics
+    </div>
+  </div>
+</div>
+
 
         {/* RIGHT SIDE: PREMIUM CONTENT BLOCK */}
         <div

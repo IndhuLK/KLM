@@ -99,7 +99,7 @@ const WelcomeSection = () => {
               </div>
 
               {/* small floating badges */}
-              <div className="absolute -right-6 -top-6 flex flex-col gap-3">
+              <div className="absolute -right-6 -top-6 flex flex-col gap-3 z-10">
                 <div className="px-3 py-2 bg-white/90 border border-gray-100 rounded-full 
                 text-xs font-medium shadow">Bulk Orders</div>
                 <div className="px-3 py-2 bg-white/90 border border-gray-100 rounded-full
@@ -112,7 +112,7 @@ const WelcomeSection = () => {
       </div>
 
       {/* subtle background pattern */}
-      <svg className="pointer-events-none absolute right-0 bottom-0 opacity-10 w-64
+      <svg className="pointer-events-none absolute right-0 md:bottom-10 bottom-0 opacity-10 w-64
        h-64" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="g2" x1="0%" x2="100%" y1="0%" y2="100%">

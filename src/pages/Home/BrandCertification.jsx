@@ -91,15 +91,19 @@ const BrandCertification = () => {
       </div>
 
       <div className="flex justify-center mt-16" data-aos="zoom-in-up" data-aos-delay="400">
-        <div className="relative bg-white rounded-3xl border border-gray-100 shadow-xl p-6 overflow-hidden group max-w-[920px] w-full">
+        <div className="relative bg-white rounded-3xl border border-gray-100 shadow-xl p-6 
+        overflow-hidden group max-w-[920px] w-full">
           {/* Use fallback public image to avoid build errors in sandboxes where local assets aren't available */}
           <img
             src={logoFallback}
             alt="Certifications"
-            className="w-full object-contain h-auto transition-transform duration-700 group-hover:scale-105"
+            className="w-full object-contain h-auto transition-transform duration-700 
+           "
           />
 
-          <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#2b4a91]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          {/* <div className="absolute inset-0 pointer-events-none bg-gradient-to-r 
+          from-[#2b4a91]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity
+           duration-700"></div>*/}
         </div>
       </div>
 

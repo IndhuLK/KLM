@@ -1,32 +1,33 @@
 import React from "react";
-import trackImg from "/src/assets/shoe1.jpg";
-import jerseyImg from "/src/assets/shoe2.png";
+import trackImg from "/src/assets/beltcap.png";
+import boysport from "/src/assets/boysport.jfif";
 import teeImg from "/src/assets/shoe.png";
 
 const SportsCollection = () => {
-  const collections = [
-    {
-      id: 1,
-      title: "Pro-Motion Track Suits",
-      desc: "Engineered for maximum athletic output and flexibility, featuring sweat-wicking thermal fabric. Ideal for training.",
-      img: trackImg,
-      delay: 0,
-    },
-    {
-      id: 2,
-      title: "Team Dynasty Jersey Sets",
-      desc: "Fully customizable team kits with anti-snag material, vibrant dye-sublimation, and superior breathability for game day.",
-      img: jerseyImg,
-      delay: 100,
-    },
-    {
-      id: 3,
-      title: "Verve Athletic Shorts & Tees",
-      desc: "Lightweight, soft, and quick-drying essentials. The perfect choice for indoor sports, fitness, and casual active sessions.",
-      img: teeImg,
-      delay: 200,
-    },
-  ];
+ const collections = [
+  {
+    id: 1,
+    title: "High-Performance Sports Shoes",
+    desc: "Engineered for grip, comfort, and agility — our sports shoes support every sprint, jump, and training session with superior cushioning and durability.",
+    img: teeImg,
+    delay: 0,
+  },
+  {
+    id: 2,
+    title: "Elite Sportswear Collection",
+    desc: "Breathable, stretch-ready, lightweight sports uniforms crafted for performance. Perfect for physical training, team activities, and everyday school sports.",
+    img: boysport,
+    delay: 100,
+  },
+  {
+    id: 3,
+    title: "Sports Accessories — Cap & Belt",
+    desc: "Durable, stylish, and built for everyday use. Our sports caps and belts complement school sports uniforms with comfort, strength, and long-lasting quality.",
+    img: trackImg,
+    delay: 200,
+  },
+];
+
 
   const PRIMARY_RED = "#EC3338"; // Deep Red
   const SOFT_GOLD = "#FFCA93"; // Soft Gold/Peach
