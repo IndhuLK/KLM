@@ -4,21 +4,50 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ArrowDown } from "lucide-react";
 
-import shoe1 from "/src/assets/shoe1.jpg";
+import shoe1 from "/src/assets/red-shoe.png";
 import shoe2 from "/src/assets/shoe2.png";
 import shoe3 from "/src/assets/shoe.png";
 
-// Custom Dots
-const CustomDots = ({ currentSlide, slideCount, goToSlide }) => (
-  <div className="absolute top-1/2 right-6 transform -translate-y-1/2 flex flex-col space-y-3 z-30">
+// ----------------- DESKTOP DOTS -----------------
+const DesktopDots = ({ currentSlide, slideCount, goToSlide }) => (
+  <div
+    className="
+      absolute top-1/2 right-6 -translate-y-1/2
+      hidden md:flex flex-col space-y-3
+      z-30
+    "
+  >
     {Array.from({ length: slideCount }).map((_, i) => (
       <button
         key={i}
         onClick={() => goToSlide(i)}
-        className={`w-4 h-4 rounded-full border-2 transition-all duration-300  ${
+        className={`w-4 h-4 rounded-full border-2 transition-all duration-300 ${
           currentSlide === i
-            ? "bg-[#EC3338] border-[#EC3338] scale-110 shadow-md"
-            : " hover:bg-white/50 border-gray-500"
+            ? "bg-[#2563eb] border-[#2563eb] scale-110 shadow-md"
+            : "border-gray-500 bg-white/40"
+        }`}
+      />
+    ))}
+  </div>
+);
+
+// ----------------- MOBILE DOTS -----------------
+const MobileDots = ({ currentSlide, slideCount, goToSlide }) => (
+  <div
+    className="
+      absolute bottom-4 right-4
+      flex md:hidden flex-row space-x-3
+      z-30
+    "
+  >
+    {Array.from({ length: slideCount }).map((_, i) => (
+      <button
+        key={i}
+        onClick={() => goToSlide(i)}
+        className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
+          currentSlide === i
+            ? "bg-[#2563eb] border-[#2563eb]"
+            : "border-gray-500 bg-white/40"
         }`}
       />
     ))}
@@ -63,8 +92,7 @@ const ShoesSlider = () => {
 
   return (
     <section className="relative w-full h-[500px] md:h-[650px] overflow-hidden">
-
-      {/* Slider Background (FULL IMAGE) */}
+      {/* BACKGROUND SLIDES */}
       <Slider ref={sliderRef} {...settings}>
         {slides.map((slide, i) => (
           <div key={i}>
@@ -72,46 +100,58 @@ const ShoesSlider = () => {
               className="w-full h-[500px] md:h-[650px] bg-cover bg-center"
               style={{
                 backgroundImage: `url(${slide.image})`,
-               backgroundSize: "90%", 
-               backgroundPosition: "center", backgroundRepeat: "no-repeat",
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "right center",
+                backgroundColor: "#fff",
               }}
             ></div>
           </div>
         ))}
       </Slider>
 
-      {/* 🔥 LEFT SIDE RED OVERLAY CONTENT */}
-      <div className="absolute inset-0 bg-gradient-to-r from-red-400/80 via-red-300/30
-       to-transparent z-20 
-      flex items-center">
-
-        <div className="pl-8 md:pl-16 max-w-3xl text-black">
-          <h1 className="text-3xl md:text-6xl font-extrabold mb-4 leading-tight">
+      {/* ----------- OVERLAY TEXT (Desktop + Mobile) ----------- */}
+      <div
+        className="
+          absolute inset-0 z-20
+          flex items-start
+          pt-10 md:pt-0 md:items-center
+          bg-gradient-to-r from-black/60 via-black/40 to-transparent
+        "
+      >
+        <div className="px-6 md:px-16 max-w-3xl text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight mb-4">
             {slides[currentSlide].title}
           </h1>
 
-          <p className="text-base md:text-2xl font-medium tracking-wide leading-relaxed">
+          <p className="text-sm sm:text-base md:text-2xl text-gray-200 leading-relaxed">
             {slides[currentSlide].subtitle}
           </p>
 
-          <button className="mt-6 bg-black text-white px-6 py-3 rounded-full font-semibold 
-            text-sm md:text-base hover:bg-[#EC3338] transition-all duration-300 shadow-lg">
+          <button className="mt-6 bg-[#c9a759] text-black px-6 py-3 rounded-full 
+          font-semibold text-sm md:text-base shadow-lg">
             Explore Our Range
           </button>
         </div>
-
       </div>
 
-      {/* Custom Right Dots */}
-      <CustomDots
+      {/* DESKTOP DOTS */}
+      <DesktopDots
         currentSlide={currentSlide}
         slideCount={slides.length}
-        goToSlide={(index) => sliderRef.current.slickGoTo(index)}
+        goToSlide={(i) => sliderRef.current.slickGoTo(i)}
       />
 
-      {/* Scroll Indicator */}
+      {/* MOBILE DOTS */}
+      <MobileDots
+        currentSlide={currentSlide}
+        slideCount={slides.length}
+        goToSlide={(i) => sliderRef.current.slickGoTo(i)}
+      />
+
+      {/* SCROLL ARROW */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30">
-        <ArrowDown className="w-6 h-6 text-red-600 animate-bounce" />
+        <ArrowDown className="w-6 h-6 text-white opacity-80 animate-bounce" />
       </div>
     </section>
   );

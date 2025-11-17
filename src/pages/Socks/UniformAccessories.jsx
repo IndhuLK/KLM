@@ -8,11 +8,10 @@ import belt from "/src/assets/9.png";
 import bag from "/src/assets/9.png";
 import socks1 from "/src/assets/6.png";
 
-// 🎨 Brand Colors
-const PRIMARY_RED = "#EC3338";
-const DARK_TEXT = "#1A1A1A";
-const LIGHT_TEXT = "#5A5A5A";
-const SOFT_BG = "linear-gradient(135deg, #fff5f5 0%, #ffecec 100%)";
+// 🎨 New Brand Colors
+const BLUE = "#2563eb";
+const GOLD = "#c9a759";
+const BLACK = "#1A1A1A";
 
 const UniformAccessories = () => {
   useEffect(() => {
@@ -53,109 +52,95 @@ const UniformAccessories = () => {
   return (
     <section
       className="py-20 px-6 md:px-16 font-poppins relative overflow-hidden 
-      bg-gradient-to-br from-[#f36e4c] via-[#ffecec] to-[#f7c086]"
-     
+      bg-gradient-to-br from-[#2563eb]/10 via-white to-[#c9a759]/10"
     >
-      {/* Decorative Background Shapes */}
-      <div className="absolute -top-10 -left-10 w-72 h-72 bg-[#EC3338]/10 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#EC3338]/5 blur-3xl rounded-full"></div>
+      {/* ----------------- TOP SECTION ----------------- */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* LEFT CONTENT */}
+        <div className="space-y-12" data-aos="fade-right">
+          {/* BLOCK 1 */}
+          <div className="flex items-start gap-4">
+            {/* ICON */}
+            <Sun className="w-10 h-10 text-[#c9a759] flex-shrink-0 " />
 
-      {/* ---------- TOP FEATURE SECTION ---------- */}
-      <div
-        className="relative bg-white/80 backdrop-blur-lg border border-[#EC3338]/10 rounded-3xl p-10 md:p-14 shadow-xl overflow-hidden"
-        data-aos="fade-up"
-      >
-        {/* Diagonal Gradient Background */}
-        <div
-          className="absolute top-0 right-0 w-3/5 h-full transform skew-y-3 origin-top-right z-0"
-          style={{
-            background: `linear-gradient(135deg, #EC3338 0%, #ff8a8a 100%)`,
-          }}
-          data-aos="fade-left"
-        ></div>
-
-        <div className="relative z-10 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
-          {/* LEFT: FEATURES */}
-          <div className="w-full md:w-1/2 space-y-8 py-4">
-            {/* Feature 1 */}
-            <div
-              className="p-6 rounded-xl border border-[#EC3338]/20 bg-white shadow-md 
-              hover:shadow-lg transition duration-300"
-              data-aos="fade-right"
-            >
-              <Palette className="w-8 h-8 text-[#EC3338] mb-3" />
-              <h2 className="text-lg md:text-2xl font-bold text-[#EC3338] font-poppins">
+            {/* TEXT CONTENT */}
+            <div className="space-y-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-poppins">
                 Institutional Color Matching
               </h2>
-              <p className="text-sm mt-1 text-[#444] font-inter">
+              <p className="text-gray-600 leading-relaxed font-inter">
                 Available in standard school shades with stripe or plain options
                 that coordinate perfectly with the full uniform collection.
               </p>
             </div>
+          </div>
 
-            {/* Feature 2 */}
-            <div
-              className="p-6 rounded-xl border border-[#EC3338]/20 bg-white shadow-md hover:shadow-lg transition duration-300"
-              data-aos="fade-right"
-              data-aos-delay="200"
-            >
-              <Package className="w-8 h-8 text-[#EC3338] mb-3" />
-              <h2 className="text-lg md:text-2xl font-bold text-[#EC3338] font-poppins">
+          {/* BLOCK 2 */}
+          <div className="flex items-start gap-4 mt-10">
+            {/* ICON */}
+            <Package className="w-10 h-10 text-[#c9a759] flex-shrink-0" />
+
+            {/* TEXT CONTENT */}
+            <div className="space-y-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-poppins">
                 Bulk Packaging & Size Range
               </h2>
-              <p className="text-sm mt-1 text-[#444] font-inter">
+              <p className="text-gray-600 leading-relaxed font-inter">
                 Socks come in multi-size packs and are ideal for bulk
                 distribution, featuring clear labeling for easy inventory and
                 organization.
               </p>
             </div>
           </div>
+        </div>
 
-          {/* RIGHT: IMAGE */}
-          <div className="w-full md:w-1/2 flex justify-center py-8 relative">
+        {/* RIGHT IMAGE */}
+        <div
+          className="flex justify-center lg:justify-end"
+          data-aos="fade-left"
+        >
+          <div className="w-full max-w-xs md:max-w-sm lg:max-w-md">
             <img
               src={socks1}
-              alt="Socks Display"
-              className="w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl 
-              rounded-[40%_60%_70%_30%] transition-transform duration-500 hover:scale-105"
-              data-aos="zoom-in"
-              style={{
-                filter: "drop-shadow(0 10px 20px rgba(236, 51, 56, 0.3))",
-              }}
+              className="w-full h-auto rounded-2xl shadow-lg object-contain"
+              alt="Institutional Socks"
             />
           </div>
         </div>
       </div>
 
-      {/* ---------- BOTTOM ACCESSORY GRID ---------- */}
+      {/* ----------------- BOTTOM TITLE ----------------- */}
       <h2
-        className="text-3xl md:text-5xl font-extrabold text-center mt-20 mb-10 font-poppins"
-        style={{ color: PRIMARY_RED }}
+        className="text-3xl md:text-5xl font-extrabold text-center mt-24 mb-12 font-poppins 
+        bg-gradient-to-r from-[#2563eb] to-[#c9a759] bg-clip-text text-transparent"
         data-aos="fade-up"
       >
         Essential Uniform Accessories
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* ----------------- BOTTOM CARDS GRID ----------------- */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {bottomCards.map((card, index) => (
           <div
             key={index}
             className="group relative bg-white rounded-3xl p-8 shadow-md border
-             border-[#EC3338]/10 hover:shadow-2xl hover:-translate-y-2 transition-all 
+             border-[#2563eb]/10 hover:shadow-2xl hover:-translate-y-2 transition-all 
              duration-500"
             data-aos={card.anim}
             data-aos-delay={index * 150}
           >
             {/* Accent Blob */}
             <div
-              className="absolute -top-12 -right-12 w-40 h-40 bg-[#EC3338]/10 rounded-full
+              className="absolute -top-12 -right-12 w-40 h-40 bg-[#2563eb]/10 rounded-full
                opacity-0 group-hover:opacity-100 transition-all duration-700"
             ></div>
 
-            {/* Icon + Image */}
-            <div className="mb-4 flex items-center justify-between">
-              <card.icon className="w-8 h-8 text-[#EC3338] transition duration-300 
-              group-hover:text-[#ff4b4b]" />
+            {/* Icon + Image Row */}
+            <div className="mb-6 flex items-center justify-between">
+              <card.icon
+                className="w-8 h-8 text-[#2563eb] transition duration-300 
+                group-hover:text-[#c9a759]"
+              />
               <img
                 src={card.img}
                 alt={card.alt}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Home, FilePlus2, Eye, LogOut, Menu, X } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo from '/src/assets/logo.png';
+import logo from '/src/assets/logo1.jpeg';
 
 const Sidebar = () => {
   const navigate = useNavigate();

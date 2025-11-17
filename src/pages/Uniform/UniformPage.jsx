@@ -11,7 +11,7 @@ const UniformPage = () => {
     <div>
       <UniSlider />
       <UniformSolutions />
-    <NurseryUniform />
+    <NurseryUniform /> 
     <SeniorUniform />
     <BrandCertification />
     <BlogSection />
