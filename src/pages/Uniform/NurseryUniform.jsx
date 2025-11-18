@@ -16,9 +16,10 @@ const NurseryUniform = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white py-24 px-6">
+    <section className="relative overflow-hidden bg-white md:py-16 px-6">
       {/* Main Container */}
-      <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 z-10">
+      <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row 
+      items-center md:items-start gap-12 z-10">
         {/* LEFT SIDE — IMAGE ONLY */}
         <div className="relative w-full md:w-1/2" data-aos="fade-right">
           <img

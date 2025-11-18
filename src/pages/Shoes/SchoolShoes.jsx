@@ -112,12 +112,11 @@ const SchoolShoes = () => {
           </div>
 
           {/* RIGHT IMAGE (Slider) */}
-          <div className="relative md:w-1/2 w-full flex justify-center
-           items-center" data-aos="fade-left">
-            <div className="w-full scale-90 sm:scale-100">
-              <RightSide />
-            </div>
-          </div>
+         <div className="w-full flex justify-center items-center">
+  <div className="w-full max-w-[380px] sm:max-w-[300px] md:max-w-full">
+    <RightSide />
+  </div>
+</div>
         </div>
       </div>
 
