@@ -60,7 +60,7 @@ const SocksSlider = () => {
       image: socks1,
       title: "Stretchable Comfort, All Day Long",
       subtitle:
-        "KLM school socks are crafted for durability, breathability, and maximum comfort — keeping students fresh from assembly to after-school activities.",
+        "Bulk Bridge school socks are crafted for durability, breathability, and maximum comfort — keeping students fresh from assembly to after-school activities.",
     },
     {
       image: socks2,

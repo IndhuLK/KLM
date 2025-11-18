@@ -34,8 +34,8 @@ const FunctionalAddOns = () => {
             <div>
               <h2 className="leading-tight text-3xl sm:text-4xl md:text-5xl 
               font-extrabold text-[#1a1a1a] space-y-1 ">
-                <span className="block">FUNCTIONAL</span>
-                <span className="">ADD-</span>
+                <span className="block">FUNCTIONAL ADD-</span>
+                
                 <span className="block">ONS THAT</span>
                 <span className="block">COMPLETE THE</span>
                 <span className="block text-[#2563eb]">LOOK</span>

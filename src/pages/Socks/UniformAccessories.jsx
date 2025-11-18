@@ -3,10 +3,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Palette, Package, Sun, Ruler, Backpack } from "lucide-react";
 
-import cap from "/src/assets/8.png";
-import belt from "/src/assets/9.png";
-import bag from "/src/assets/9.png";
-import socks1 from "/src/assets/6.png";
+import cap from "/src/assets/caps.png";
+import belt from "/src/assets/belt.png";
+import bag from "/src/assets/bag.png";
+import socks1 from "/src/assets/socks5.png";
 
 // 🎨 New Brand Colors
 const BLUE = "#2563eb";
@@ -51,7 +51,7 @@ const UniformAccessories = () => {
 
   return (
     <section
-      className="py-20 px-6 md:px-16 font-poppins relative overflow-hidden 
+      className="py-10 px-6 md:px-16 font-poppins relative overflow-hidden 
       bg-gradient-to-br from-[#2563eb]/10 via-white to-[#c9a759]/10"
     >
       {/* ----------------- TOP SECTION ----------------- */}
@@ -123,38 +123,36 @@ const UniformAccessories = () => {
         {bottomCards.map((card, index) => (
           <div
             key={index}
-            className="group relative bg-white rounded-3xl p-8 shadow-md border
-             border-[#2563eb]/10 hover:shadow-2xl hover:-translate-y-2 transition-all 
-             duration-500"
+            className="group relative bg-[#0B2C6B] rounded-3xl p-8 shadow-md 
+      hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-white"
             data-aos={card.anim}
             data-aos-delay={index * 150}
           >
-            {/* Accent Blob */}
-            <div
-              className="absolute -top-12 -right-12 w-40 h-40 bg-[#2563eb]/10 rounded-full
-               opacity-0 group-hover:opacity-100 transition-all duration-700"
-            ></div>
+            <div className="flex items-center justify-between">
+              {/* -------- LEFT SIDE TEXT -------- */}
+              <div className="w-1/2 pr-4">
+                <h3 className="text-lg font-bold leading-snug">{card.title}</h3>
+                <p className="text-sm mt-2 opacity-90">{card.desc}</p>
+              </div>
 
-            {/* Icon + Image Row */}
-            <div className="mb-6 flex items-center justify-between">
-              <card.icon
-                className="w-8 h-8 text-[#2563eb] transition duration-300 
-                group-hover:text-[#c9a759]"
-              />
-              <img
-                src={card.img}
-                alt={card.alt}
-                className="w-16 h-16 object-contain drop-shadow-md transition-transform 
-                duration-500 group-hover:scale-110"
-              />
+              {/* -------- RIGHT SIDE IMAGE WITH WAVY BORDER -------- */}
+              <div className="w-1/2 flex justify-end">
+                <div
+                  className="relative bg-white p-3 rounded-[28px] shadow-lg
+              transition-all duration-500 group-hover:scale-110"
+                >
+                  {/* wavy blob border */}
+                  <div className="absolute inset-0 bg-white rounded-[28px] 
+                  blur-xl opacity-40"></div>
+
+                  <img
+                    src={card.img}
+                    alt={card.alt}
+                    className="relative w-20 h-20 object-contain z-10"
+                  />
+                </div>
+              </div>
             </div>
-
-            <h3 className="text-xl font-bold mb-2 text-[#1a1a1a]">
-              {card.title}
-            </h3>
-            <p className="text-sm text-[#5a5a5a] leading-relaxed">
-              {card.desc}
-            </p>
           </div>
         ))}
       </div>

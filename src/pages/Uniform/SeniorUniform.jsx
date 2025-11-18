@@ -23,13 +23,16 @@ const SeniorUniform = () => {
       <div className="absolute bottom-10 right-10 w-64 h-64 opacity-20 bg-[radial-gradient(circle,#c9a759_1.2px,transparent_1.2px)] bg-[length:18px_18px]" />
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 relative z-10">
-        
         {/* LEFT CONTENT */}
         <div className="md:w-1/2 relative space-y-6" data-aos="fade-right">
-          
           <h2 className="text-3xl md:text-5xl font-bold text-black leading-tight font-poppins">
             Senior Uniform <br />
-            <span className="text-[#2563eb]">– Boys & Girls</span>
+            <span
+              className="bg-clip-text text-transparent bg-gradient-to-r from-[#2563eb]
+             to-[#c9a759] font-poppins"
+            >
+              – Boys & Girls
+            </span>
           </h2>
 
           <p className="text-gray-700 font-inter leading-relaxed text-base md:text-lg">
@@ -40,7 +43,6 @@ const SeniorUniform = () => {
 
           {/* Feature Cards */}
           <div className="space-y-5 mt-4">
-
             {/* Card 1 */}
             <div
               className="flex items-start gap-4  backdrop-blur-lg transition-all 
@@ -54,8 +56,8 @@ const SeniorUniform = () => {
                 <span className="text-[#2563eb] font-semibold">
                   Tailored Shirts for All-Day Comfort:
                 </span>{" "}
-                White or light blue button-down shirts, long or short sleeve with optional
-                 embroidered school crests.
+                White or light blue button-down shirts, long or short sleeve
+                with optional embroidered school crests.
               </p>
             </div>
 
@@ -73,7 +75,8 @@ const SeniorUniform = () => {
                 <span className="text-[#c9a759] font-semibold">
                   Sustainable & Ethically Made:
                 </span>{" "}
-                We prioritize ethical production, reduced water usage and eco-conscious fabric sourcing.
+                We prioritize ethical production, reduced water usage and
+                eco-conscious fabric sourcing.
               </p>
             </div>
 
@@ -91,7 +94,8 @@ const SeniorUniform = () => {
                 <span className="text-[#2563eb] font-semibold">
                   Confident, Professional Appearance:
                 </span>{" "}
-                Our senior wear enhances discipline and identity with tailored fits for all body types.
+                Our senior wear enhances discipline and identity with tailored
+                fits for all body types.
               </p>
             </div>
           </div>
@@ -102,12 +106,13 @@ const SeniorUniform = () => {
               ›››››
             </p>
           </div>
-
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="md:w-1/2 flex flex-col items-center justify-center relative" data-aos="fade-left">
-          
+        <div
+          className="md:w-1/2 flex flex-col items-center justify-center relative"
+          data-aos="fade-left"
+        >
           <img
             src={seniorUniform}
             alt="Senior Uniforms"
@@ -124,7 +129,6 @@ const SeniorUniform = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
 

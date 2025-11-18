@@ -58,21 +58,21 @@ const Hero = () => {
   const slides = [
     {
       image: uni2,
-      title: "KLM — Defining Everyday School Style",
+      title: "Bulk Bridge — Defining Everyday School Style",
       subtitle:
-        "From uniforms to shoes, socks, accessories, jackets & sportswear — KLM delivers excellence in every stitch.",
+        "From uniforms to shoes, socks, accessories, jackets & sportswear — Bulk Bridge delivers excellence in every stitch.",
     },
     {
       image: uni1,
       title: "Complete Uniform Solutions",
       subtitle:
-        "KLM offers a one-stop solution for schools — durable fabrics, reliable shoes, and custom-branded accessories.",
+        "Bulk Bridge offers a one-stop solution for schools — durable fabrics, reliable shoes, and custom-branded accessories.",
     },
     {
       image: uni3,
       title: "Designed for Comfort & Confidence",
       subtitle:
-        "Each KLM product blends comfort, quality, and durability — empowering students to move with pride.",
+        "Each Bulk Bridge product blends comfort, quality, and durability — empowering students to move with pride.",
     },
   ];
 

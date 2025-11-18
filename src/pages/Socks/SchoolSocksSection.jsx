@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import whiteSocks from "/src/assets/socks.png";
-import socksBanner from "/src/assets/socks2.jpg";
+import socksBanner from "/src/assets/socks6.png";
 import walk from "/src/assets/walk.png";
 
 const SchoolSocksSection = () => {
@@ -33,7 +33,7 @@ const SchoolSocksSection = () => {
             src={whiteSocks}
             alt="School Uniform Socks"
             className="w-[65%] md:w-[80%] object-contain drop-shadow-xl 
-            transition-transform duration-500 group-hover:scale-105 mx-auto"
+            transition-transform  mx-auto"
           />
           <div className="absolute -z-10 inset-0 bg-[#2563eb]/5 blur-2xl rounded-full scale-125"></div>
         </div>

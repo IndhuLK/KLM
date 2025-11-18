@@ -5,6 +5,7 @@ import WelcomeSection from './WelcomeSection'
 import ThinkingBig from './ThinkingBig'
 import BrandCertification from './BrandCertification'
 import BlogSection from '../../components/BlogSection'
+import Review from './Review'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <InstitutionalUniforms />
         <WelcomeSection />
         <ThinkingBig />
+        <Review />
         <BrandCertification />
         <BlogSection />
     </div>

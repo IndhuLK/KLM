@@ -17,16 +17,13 @@ const NurseryUniform = () => {
 
   return (
     <section className="relative overflow-hidden bg-white py-24 px-6">
-
       {/* Main Container */}
       <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 z-10">
-
         {/* LEFT SIDE — IMAGE ONLY */}
         <div className="relative w-full md:w-1/2" data-aos="fade-right">
-          
           <img
             src={uniform}
-            className="w-full h-[550px] object-contain rounded-xl"   // Clean image
+            className="w-full h-[550px] object-contain rounded-xl" // Clean image
           />
 
           {/* Bottom Label */}
@@ -44,10 +41,15 @@ const NurseryUniform = () => {
 
         {/* RIGHT SIDE CONTENT */}
         <div className="md:w-1/2 text-gray-800" data-aos="fade-left">
-
           {/* Title */}
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-poppins">
-            Nursery Uniform – <span className="text-[#2563eb]">Boys & Girls</span>
+            Nursery Uniform –{" "}
+            <span
+              className="bg-clip-text text-transparent bg-gradient-to-r from-[#2563eb]
+             to-[#c9a759] font-poppins"
+            >
+              Boys & Girls
+            </span>
           </h2>
 
           {/* Content Box */}
@@ -56,33 +58,48 @@ const NurseryUniform = () => {
             bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-md border border-[#2563eb]/10"
           >
             {/* 1 */}
-            <div className="flex items-start space-x-4" data-aos="fade-up" data-aos-delay="100">
+            <div
+              className="flex items-start space-x-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <div className="p-3 rounded-xl bg-[#2563eb]/10 text-[#2563eb]">
                 <Shirt size={22} />
               </div>
               <p>
-                For our youngest students, comfort and practicality are paramount.
-                Bulk Bridge nursery uniform range supports active play and easy wear.
+                For our youngest students, comfort and practicality are
+                paramount. Bulk Bridge nursery uniform range supports active
+                play and easy wear.
               </p>
             </div>
 
             {/* 2 */}
-            <div className="flex items-start space-x-4" data-aos="fade-up" data-aos-delay="200">
+            <div
+              className="flex items-start space-x-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div className="p-3 rounded-xl bg-[#2563eb]/10 text-[#2563eb]">
                 <Wind size={22} />
               </div>
               <p>
-                Soft, breathable fabrics in polo shirts and T-shirts ensure all-day comfort.
+                Soft, breathable fabrics in polo shirts and T-shirts ensure
+                all-day comfort.
               </p>
             </div>
 
             {/* 3 */}
-            <div className="flex items-start space-x-4" data-aos="fade-up" data-aos-delay="300">
+            <div
+              className="flex items-start space-x-4"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <div className="p-3 rounded-xl bg-[#2563eb]/10 text-[#2563eb]">
                 <Ruler size={22} />
               </div>
               <p>
-                Flexible waistbands in shorts, skirts, and pinafores support growth and movement.
+                Flexible waistbands in shorts, skirts, and pinafores support
+                growth and movement.
               </p>
             </div>
           </div>
@@ -94,9 +111,7 @@ const NurseryUniform = () => {
             whileInView={{ width: 112 }}
             transition={{ duration: 0.8 }}
           ></motion.div>
-
         </div>
-
       </div>
     </section>
   );

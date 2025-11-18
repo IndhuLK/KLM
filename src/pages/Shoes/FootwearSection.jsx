@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import shoe1 from "/src/assets/shoe1.jpg";
+import shoe1 from "/src/assets/shoe1.png";
 import shoe2 from "/src/assets/shoe2.png";
 import shoe3 from "/src/assets/shoe.png";
 
@@ -111,8 +111,8 @@ const FootwearSection = () => {
 
         {/* RIGHT SLIDER SIDE */}
         <div
-          className="w-full md:w-1/2 relative bg-white/40 backdrop-blur-2xl rounded-3xl shadow-2xl
-                     py-10 px-6 md:px-10 overflow-hidden border border-white/40"
+          className="w-full md:w-1/2 relative 
+                     py-10 px-6 md:px-10 overflow-hidden "
           data-aos="fade-left"
         >
           <Slider {...settings}>

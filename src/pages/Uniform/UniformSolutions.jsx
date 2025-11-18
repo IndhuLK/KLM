@@ -1,145 +1,91 @@
-import React, { useEffect, useState } from "react";
-import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
-
-const initAOS = () => console.log("AOS Initialized (Mock)");
+import sample1 from "/src/assets/rocket.png";
+import sample2 from "/src/assets/goal.png";
+import sample3 from "/src/assets/light.png";
 
 const UniformSolutions = () => {
-  const testimonials = [
-    {
-      quote:
-        "Bulk Bridge uniform quality is unmatched. The fabric durability significantly reduced replacements throughout the school year. Their reliable delivery made the back-to-school process seamless.",
-      name: "Dr. L. Karthikeyan",
-      title: "Principal, St. Jude's International School",
-      color: "#2563eb", // 🔵 BLUE
-    },
-    {
-      quote:
-        "We were looking for a manufacturer who could handle specific design requirements with low minimum order quantities. Bulk Bridge provided excellent personalized service with perfect finishing.",
-      name: "Sonia M.",
-      title: "Procurement Head, City Public Schools Group",
-      color: "#c9a759", // 🟡 GOLD
-    },
-    {
-      quote:
-        "The partnership with Bluk Bridge has been a major asset. Their transparent practices and consistent quality control ensure we deliver the best product to parents.",
-      name: "Aravind K.",
-      title: "Owner, Retail Uniform Store (KLM Partner)",
-      color: "#2563eb", // 🔵 BLUE
-    },
-  ];
-
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const nextSlide = () =>
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
-  const prevSlide = () =>
-    setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-
-  useEffect(() => {
-    initAOS();
-    const auto = setInterval(nextSlide, 6000);
-    return () => clearInterval(auto);
-  }, []);
-
   return (
-    <section className="relative py-20 bg-gradient-to-tr from-[#6cb7e933] via-white to-[#7dc7e433] overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* LEFT CONTENT */}
-        <div
-          className="space-y-6 text-center lg:text-left"
-          data-aos="fade-right"
-        >
-          <h3 className="text-sm font-semibold text-[#2563eb] uppercase tracking-widest
-          font-inter">
-            Why School Uniforms Matter
+    <section className="py-16 px-6 md:px-12 lg:px-20 bg-white">
+      
+      {/* TOP SMALL TITLE */}
+      <h3 className="text-center text-sm font-semibold text-[#2563eb] tracking-widest 
+      uppercase mb-3">
+        Why School Uniforms Matter
+      </h3>
+
+      {/* MAIN HEADING */}
+      <h2 className="text-center text-2xl md:text-4xl font-extrabold text-black font-poppins
+       mb-12 max-w-2xl mx-auto">
+        Bulk Bridge’s Approach to <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#2563eb]
+             to-[#c9a759] font-poppins">Practical, Branded, and Reliable </span>  Uniform Solutions
+      </h2>
+
+      {/* 3-COLUMN WRAPPER */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-10 place-items-center">
+
+        {/* LEFT CARD */}
+        <div className="relative bg-[#c9a75922] p-8 pt-16 rounded-xl shadow-md 
+        w-full max-w-sm text-center border border-gray-200">
+
+          {/* FLOATING IMAGE */}
+          <img 
+            src={sample1}
+            alt="Legacy Image"
+            className="absolute -top-14 left-1/2 -translate-x-1/2 w-24 h-24 object-contain"
+          />
+
+          <h3 className="text-xl font-bold mb-3 text-black font-poppins">
+            Established Legacy <br /> & Trusted Brands
           </h3>
 
-          <h2 className="text-3xl md:text-5xl font-extrabold text-black leading-tight">
-            Bluk Bridge Approach to Practical, Branded, and Reliable Uniform
-            Solutions
-          </h2>
-
-          <p className="text-gray-700 text-lg max-w-lg mx-auto lg:mx-0 font-inter">
-            Our uniforms represent unity, discipline, and identity — crafted to
-            last, designed to impress, and delivered with reliability.
+          <p className="text-gray-700 leading-relaxed text-sm font-inter">
+            Founded in 2015, Bulk Bridge Apparel has built a reputation for quality and trust. 
+            Our partners include Reebok, Wildcraft, Campus, Green Sole, and more.
           </p>
         </div>
 
-        {/* RIGHT — STACKED TESTIMONIAL CARDS */}
-        <div
-          className="relative flex justify-center items-center w-full h-[420px] md:h-[450px]"
-          data-aos="fade-left"
-        >
-          {testimonials.map((t, index) => {
-            const offset = index - activeIndex;
-            const isActive = offset === 0;
+        {/* CENTER CARD */}
+        <div className="relative bg-[#c9a75922] p-8 pt-20 rounded-xl shadow-md
+         w-full max-w-sm text-center border border-gray-200">
 
-            const style = {
-              transform: `translate(${offset * 30}px, ${offset * 20}px) scale(${
-                isActive ? 1.05 : 0.9
-              }) rotate(${offset * 4}deg)`,
-              zIndex: testimonials.length - Math.abs(offset),
-              opacity: Math.abs(offset) > 2 ? 0 : 1,
-              transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
-            };
+          {/* FLOATING IMAGE */}
+          <img 
+            src={sample2}
+            alt="Institutional Image"
+            className="absolute -top-16 left-1/2 -translate-x-1/2 w-28 h-28 object-contain"
+          />
 
-            return (
-              <div
-                key={index}
-                style={style}
-                className={`absolute w-[95%] sm:w-[85%] md:w-[70%] lg:w-[380px] 
-                bg-white rounded-2xl shadow-2xl p-8 flex flex-col justify-between 
-                border-t-4 border-[${t.color}] backdrop-blur-md`}
-              >
-                <Quote className="w-8 h-8 text-[#2563eb] mb-4" />
+          <h3 className="text-xl font-bold mb-4 font-poppins text-black">
+            Tailored Institutional Solutions
+          </h3>
 
-                <p className="text-gray-700 text-base italic leading-relaxed">
-                  “{t.quote}”
-                </p>
-
-                <div className="mt-6 border-t border-[#c9a759] pt-4">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h4 className="font-semibold text-[#2563eb] font-poppins">{t.name}</h4>
-                      <p className="text-sm text-gray-500 font-inter">{t.title}</p>
-                    </div>
-
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`w-4 h-4 ${
-                            isActive ? "text-[#f5e506]" : "text-gray-300"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-
-          {/* Navigation */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100"
-          >
-            <ChevronLeft className="w-5 h-5 text-black" />
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100"
-          >
-            <ChevronRight className="w-5 h-5 text-black" />
-          </button>
+          <p className="text-gray-700 leading-relaxed text-sm font-inter">
+            We specialize in Customized T-Shirts, Corporate Gifts, Institutional Uniforms,
+            School Shoes & Bags — delivered with professionalism and scale through BulkBridge.co.in.
+          </p>
         </div>
-      </div>
 
-      {/* DECORATIVE BUBBLES */}
-      <div className="absolute top-10 left-10 w-16 h-16 bg-[#2563eb22] rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 right-10 w-24 h-24 bg-[#c9a75922] rounded-full blur-3xl"></div>
+        {/* RIGHT CARD */}
+        <div className="relative bg-[#c9a75922] p-8 pt-16 rounded-xl shadow-md w-full
+         max-w-sm text-center border border-gray-200">
+
+          {/* FLOATING IMAGE */}
+          <img 
+            src={sample3}
+            alt="Production Image"
+            className="absolute -top-14 left-1/2 -translate-x-1/2 w-24 h-24 object-contain"
+          />
+
+          <h3 className="text-xl font-bold mb-3 text-black font-poppins">
+            From Concept <br /> to Production
+          </h3>
+
+          <p className="text-gray-700 leading-relaxed text-sm font-inter">
+            With direct ties to India's leading garment manufacturers, we execute every
+            order with clarity — from tech pack creation to final delivery.
+          </p>
+        </div>
+
+      </div>
     </section>
   );
 };

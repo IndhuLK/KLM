@@ -5,7 +5,7 @@ const WelcomeSection = () => {
     <section
       className="relative overflow-hidden bg-gradient-to-br from-white 
     to-gray-50 py-12 md:py-20"
-    >
+    > 
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* LEFT - Text content */}

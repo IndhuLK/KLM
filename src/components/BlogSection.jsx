@@ -27,8 +27,9 @@ const BlogSection = () => {
   return (
     <section className="py-12 px-6 bg-blue-50">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl md:text-5xl font-bold mb-8 text-black text-center font-poppins">
-          Latest <span className="text-[#c9a759]">Articles</span> 
+        <h2 className="text-2xl md:text-5xl font-bold mb-8 text-center ">
+           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#2563eb]
+             to-[#c9a759] font-poppins">Latest Articles</span>
         </h2>
 
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">

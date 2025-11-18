@@ -60,7 +60,7 @@ const ShoesSlider = () => {
       image: shoe1,
       title: "Engineered for Daily Comfort",
       subtitle:
-        "KLM school shoes combine support, durability, and style — designed for all-day wear and active school life.",
+        "Bulk Bridge school shoes combine support, durability, and style — designed for all-day wear and active school life.",
     },
     {
       image: shoe2,
@@ -72,7 +72,7 @@ const ShoesSlider = () => {
       image: shoe3,
       title: "Built Strong, Styled Smart",
       subtitle:
-        "From cushioned soles to breathable materials, every KLM shoe is crafted to keep students confident and comfortable.",
+        "From cushioned soles to breathable materials, every Bulk Bridge shoe is crafted to keep students confident and comfortable.",
     },
   ];
 
