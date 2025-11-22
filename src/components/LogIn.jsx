@@ -14,8 +14,8 @@ const LogIn = () => {
 
   // 🧠 Hardcoded credentials
   const ADMIN_CREDENTIALS = {
-    username: "admin@klm",
-    password: "klm@1234",
+    username: "admin@bb",
+    password: "bb@1234",
   };
 
   // 🧭 Handle Login

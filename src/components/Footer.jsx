@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaTwitter,
 } from "react-icons/fa";
+import {Link } from "react-router-dom"
 
 const Footer = () => {
   return (
@@ -116,18 +117,19 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li>
               <span className="font-semibold text-white">Email :</span>{" "}
-              sample123@klm.com
+              Info@bulkbridge.co.in 
             </li>
             <li>
               <span className="font-semibold text-white">Phone :</span> +91
-              9874561230
+              9585299988
             </li>
             <li>
               <span className="font-semibold text-white">Address :</span>{" "}
-              No:123/A, Anna Nagar, Park Avenue, <br />
-              Second Cross Street, Kodambakkam,
-              <br />
-              Chennai - 621002
+              NO.34J
+Road/Street: KAMARAJ NAGAR, KALAPATTY ROAD
+Sitra, <br />Coimbatore 641014
+
+              
             </li>
           </ul>
         </div>
@@ -136,10 +138,9 @@ const Footer = () => {
       {/* Bottom Copyright */}
       <div className="border-t border-gray-700 mt-10 pt-4 text-center text-xs text-gray-500">
         © {new Date().getFullYear()}{" "}
-        <span className="hover:text-[#EC3338] hover:underline cursor-pointer">
-          Tekno Spot.
-        </span>{" "}
-        All rights reserved.
+        <Link to="https://teknospot.in/"><span className="hover:text-[#EC3338] hover:underline cursor-pointer">
+          Tekno Spot.  </span></Link> All rights reserved.
+         
       </div>
     </footer>
   );

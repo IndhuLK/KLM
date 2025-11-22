@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { db } from "../firebase/config";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 /**
  * ParentPopupForm.jsx
@@ -222,6 +224,12 @@ const formFields = {
       required: true,
       placeholder: "Enter email address",
     },
+    {
+      label: "District / Location",
+      type: "text",
+      required: true,
+      placeholder: "Enter location",
+    },
 
     {
       label: "What is your child’s shoe size or school grade?",
@@ -320,21 +328,37 @@ const ParentPopupForm = ({ open, onClose }) => {
     return encodeURIComponent(lines.join("\n"));
   };
 
-  const submitForm = () => {
-    if (!validateForm()) return;
+  const submitForm = async () => {
+  if (!validateForm()) return;
 
-    const finalMessage = buildWhatsAppMessage();
-    // open WhatsApp chat in new tab (web)
-    window.open(
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${finalMessage}`,
-      "_blank"
-    );
+  // 1) SAVE TO FIREBASE
+  await saveToFirebase();
 
-    // show success popup & clear form
-    setShowSuccess(true);
-    setFormData({});
-    setErrors({});
-  };
+  // 2) Send WhatsApp message
+  const finalMessage = buildWhatsAppMessage();
+  window.open(
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${finalMessage}`,
+    "_blank"
+  );
+
+  // 3) Show success popup
+  setShowSuccess(true);
+  setFormData({});
+  setErrors({});
+};
+
+  const saveToFirebase = async () => {
+  try {
+    await addDoc(collection(db, "enquiries"), {
+      role: activeTab,
+      data: formData,
+      createdAt: serverTimestamp(),
+    });
+  } catch (error) {
+    console.error("Firebase Save Error:", error);
+  }
+};
+
 
   // Helper to render input/select
   const renderField = (item) => {

@@ -6,6 +6,7 @@ import TransformingTrust from './TransformingTrust'
 import BrandCertification from '../Home/BrandCertification'
 import BlogSection from '../../components/BlogSection'
 
+
 const FabricPage = () => {
   return (
     <div>

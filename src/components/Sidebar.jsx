@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Home, FilePlus2, Eye, LogOut, Menu, X } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from '/src/assets/logo1.jpeg';
+import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/outline";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ const Sidebar = () => {
     
     { name: "Add Blog", icon: <FilePlus2 />, path: "/add-blog" },
     { name: "Preview Blog", icon: <Eye />, path: "/preview-blog" },
+    { name: "Enquiry Form", icon: <ChatBubbleLeftRightIcon />, path: "/form" },
   ];
 
   const handleLogout = () => {

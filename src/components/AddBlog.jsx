@@ -6,7 +6,7 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useNavigate, useParams } from "react-router-dom";
 
 const AddBlog = () => {
-  const { id } = useParams();
+  const { id } = useParams(); 
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({

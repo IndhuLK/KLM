@@ -32,8 +32,8 @@ const Navbar = () => {
 
         {/* CONTACT INFO (Desktop Only) */}
         <div className="hidden md:flex w-1/3 flex-col items-end pr-4 text-right text-sm font-semibold text-gray-700">
-          <span>📧 info@klm.com</span>
-          <span>📞 +91 98765 43210</span>
+          <span>📧Info@bulkbridge.co.in </span>
+          <span>📞 +91 9585299988</span>
         </div>
 
         {/* MOBILE MENU BUTTON */}

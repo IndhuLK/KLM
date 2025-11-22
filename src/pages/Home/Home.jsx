@@ -7,6 +7,8 @@ import BrandCertification from './BrandCertification'
 import BlogSection from '../../components/BlogSection'
 import Review from './Review'
 
+
+
 const Home = () => {
   return (
     <div> 
@@ -17,6 +19,8 @@ const Home = () => {
         <Review />
         <BrandCertification />
         <BlogSection />
+
+        
     </div>
   )
 }

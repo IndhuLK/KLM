@@ -9,6 +9,7 @@ import uni2 from "/src/assets/boysport.png";
 import uni3 from "/src/assets/senior.png";
 import ParentPopupForm from "../../forms/ParentPopupForm";
 
+
 // ----------------- DESKTOP DOTS -----------------
 const DesktopDots = ({ currentSlide, slideCount, goToSlide }) => (
   <div
@@ -95,6 +96,7 @@ const Hero = () => {
 
   return (
     <section className="relative w-full h-[500px] md:h-[650px] overflow-hidden">
+      
       {/* BACKGROUND SLIDES */}
       <Slider ref={sliderRef} {...settings}>
         {slides.map((slide, i) => (

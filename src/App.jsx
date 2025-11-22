@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Form } from "react-router-dom";
 import './App.css'
 import Navbar from './components/Navbar';
 import Home from './pages/Home/Home';
@@ -18,6 +18,10 @@ import AddBlog from './components/AddBlog';
 import PreviewBlog from './components/PreviewBlog';
 import ProtectedRoute from './components/ProtectedRoute';
 import LandingPage from './forms/LandingPage';
+import WhatsAppFloating from './forms/WhatsAppFloating';
+
+import EnquiryForm from './components/EnquiryForm';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -41,9 +45,11 @@ function App() {
       
       <Route path="/add-blog" element={<ProtectedRoute ><AddBlog/></ProtectedRoute>} />
       <Route path="/preview-blog" element={<ProtectedRoute><PreviewBlog/></ProtectedRoute>} />
+      <Route path="/form" element={<ProtectedRoute><EnquiryForm/></ProtectedRoute>} />
 
     </Routes>
     <Footer />
+    <WhatsAppFloating />
     </BrowserRouter>
   )
 }
