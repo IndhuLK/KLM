@@ -41,11 +41,12 @@ const SchoolUniformFabrics = () => {
           ></div>
 
           {/* Main Image */}
-          <div className="relative w-100 h-[420px] rounded-3xl overflow-hidden shadow-2xl bg-white z-10">
+          <div className="relative  rounded-3xl overflow-hidden
+           shadow-2xl bg-white z-10">
             <img
               src={fabricImg}
               alt="Premium Fabrics"
-              className="w-full h-full object-cover"
+              className="w-full lg:h-[450px]  object-cover"
             />
 
             {/* Label Tag */}
@@ -65,7 +66,8 @@ const SchoolUniformFabrics = () => {
             className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight font-poppins"
             style={{ color: ACCENT_BLACK }}
           >
-            Sourcing <span style={{ color: PRIMARY_BLUE }}>Premium</span> School Uniform Fabrics
+            Sourcing <span className="bg-clip-text text-transparent bg-gradient-to-r 
+            from-[#2563eb] to-[#c9a759]">Premium</span> School Uniform Fabrics
           </h2>
 
           <div className="space-y-6 text-lg" style={{ color: TEXT_GRAY }}>

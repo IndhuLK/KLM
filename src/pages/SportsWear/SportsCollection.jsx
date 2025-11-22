@@ -45,13 +45,15 @@ const SportsCollection = () => {
 
       {/* 🟡 Soft Gold Circle Glow */}
       <div
-        className="absolute bottom-[-150px] left-[-150px] w-80 h-80 bg-opacity-30 rounded-full blur-[100px] z-0"
+        className="absolute bottom-[-150px] left-[-150px] w-80 h-80  
+        bg-opacity-30 rounded-full blur-[100px] z-0"
         style={{ backgroundColor: SOFT_GOLD }}
       ></div>
 
       {/* 🟦 Blue Diagonal Stripe */}
       <div
-        className="absolute top-1/2 left-0 w-32 h-6 bg-opacity-70 rotate-[-45deg] z-0 shadow-lg"
+        className="absolute top-1/2 left-0 w-32 h-6 bg-opacity-70 
+        rotate-[-45deg] z-0 shadow-lg"
         style={{ backgroundColor: SOFT_GOLD }}
       ></div>
 
@@ -93,7 +95,7 @@ const SportsCollection = () => {
                 src={item.img}
                 alt={item.title}
                 className="relative rounded-3xl shadow-2xl w-full h-[400px] object-cover 
-                border-4 border-white transform group-hover:-translate-y-1 
+                border-4 border-white bg-white transform group-hover:-translate-y-1 
                 group-hover:shadow-3xl transition-all duration-500 z-10"
               />
 

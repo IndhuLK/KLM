@@ -4,7 +4,7 @@ const WelcomeSection = () => {
   return (
     <section
       className="relative overflow-hidden bg-gradient-to-br from-white 
-    to-gray-50 py-12 md:py-20"
+    to-gray-50 py-12 md:py-5"
     > 
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -159,8 +159,9 @@ const WelcomeSection = () => {
 
       {/* subtle background pattern */}
       <svg
-        className="pointer-events-none absolute right-0 md:bottom-10 bottom-0 opacity-10 w-64
-       h-64"
+        className="pointer-events-none absolute md:right-20 right-0 
+        md:bottom-10 bottom-0 opacity-10 w-64  h-64"
+      
         viewBox="0 0 200 200"
         xmlns="http://www.w3.org/2000/svg"
       >

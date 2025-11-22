@@ -15,7 +15,7 @@ const customAnimation = `
 }
 
 .smooth-bounce {
-  animation: smoothBounce 1.7s ease-in-out infinite;  /* speed & smoothness */
+  animation: smoothBounce 5s ease-in-out infinite;  /* speed & smoothness */
 }
 `;
 
@@ -49,9 +49,10 @@ const AuthorizedDistributor = () => {
         {/* LEFT CONTENT */}
         <div className="md:w-1/2 text-left" data-aos="fade-right">
           <h2 className="text-2xl md:text-5xl font-extrabold leading-tight font-poppins 
-            bg-gradient-to-r from-[#2563eb] to-[#c9a759] bg-clip-text text-transparent"
+            "
           >
-            As Authorized <br /> Distributors
+           <span className="bg-gradient-to-r from-[#2563eb] to-[#c9a759] bg-clip-text 
+            text-transparent">As Authorized <br /> Distributors</span> 
           </h2>
 
           <p className="text-gray-700 mt-4 text-base md:text-lg leading-relaxed font-inter">
@@ -69,19 +70,31 @@ const AuthorizedDistributor = () => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="md:w-1/2 relative flex justify-center items-center" data-aos="fade-left">
-          {/* Soft reflection shadow */}
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-[85%] h-10 
-            bg-black/10 rounded-full blur-2xl"></div>
+<div className="md:w-1/2 relative flex justify-center items-center" data-aos="fade-left">
 
-          <img
-            src={shoe}
-            alt="School Shoe"
-            className="relative z-10 w-[80%] md:w-[80%] object-contain drop-shadow-2xl
-            mix-blend-multiply transition-transform duration-700 hover:scale-105
-            smooth-bounce"
-          />
-        </div>
+  {/* Diagonal Shadow Behind Shoe */}
+  <div
+    className="absolute inset-0 -z-0 pointer-events-none"
+    style={{
+      background:
+        "linear-gradient(13deg, rgba(0,0,0,0.15), rgba(0,0,0,0.03))",
+      filter: "blur(38px)",
+      transform: "rotate(-8deg) scale(1.15)",
+      borderRadius: "50px",
+    }}
+  ></div>
+
+  {/* Shoe Image */}
+  <img
+    src={shoe}
+    alt="School Shoe"
+    className="
+      relative z-10 w-[80%] md:w-[80%] object-contain drop-shadow-2xl
+      mix-blend-multiply transition-transform duration-700 hover:scale-105
+      smooth-bounce
+    "
+  />
+</div>
 
       </div>
     </section>

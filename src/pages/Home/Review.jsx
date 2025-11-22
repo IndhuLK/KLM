@@ -63,8 +63,10 @@ const Review = () => {
   }, []);
 
   return (
-    <section className="relative py-20 bg-gradient-to-tr from-[#6cb7e933] via-white to-[#7dc7e433] overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="relative py-10 bg-gradient-to-tr from-[#6cb7e933] 
+    via-white to-[#7dc7e433] overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2
+       gap-12 items-center">
         {/* LEFT CONTENT */}
         <div
           className="space-y-6 text-center lg:text-left"

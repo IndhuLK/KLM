@@ -7,6 +7,7 @@ import { ArrowDown } from "lucide-react";
 import uni1 from "/src/assets/Uni1.jpg";
 import uni2 from "/src/assets/boysport.png";
 import uni3 from "/src/assets/senior.png";
+import ParentPopupForm from "../../forms/ParentPopupForm";
 
 // ----------------- DESKTOP DOTS -----------------
 const DesktopDots = ({ currentSlide, slideCount, goToSlide }) => (
@@ -55,6 +56,8 @@ const MobileDots = ({ currentSlide, slideCount, goToSlide }) => (
 );
 
 const Hero = () => {
+
+  const [openPopup, setOpenPopup] = useState(false);
   const slides = [
     {
       image: uni2,
@@ -129,9 +132,11 @@ const Hero = () => {
           </p>
 
           <button className="mt-6 bg-[#c9a759] text-black px-6 py-3 rounded-full 
-          font-semibold text-sm md:text-base shadow-lg">
+          font-semibold text-sm md:text-base shadow-lg"
+          onClick={() => setOpenPopup(true)}>
             Explore Our Range
           </button>
+          <ParentPopupForm open={openPopup} onClose={() => setOpenPopup(false)} />
         </div>
       </div>
 

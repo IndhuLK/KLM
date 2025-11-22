@@ -6,6 +6,7 @@ import AuthorizedDistributor from './AuthorizedDistributor'
 import BrandCertification from '../Home/BrandCertification'
 import BlogSection from '../../components/BlogSection'
 
+
 const ShoesPage = () => {
   return (
     <div> 

@@ -17,6 +17,7 @@ import Dashboard from './components/Dashboard';
 import AddBlog from './components/AddBlog';
 import PreviewBlog from './components/PreviewBlog';
 import ProtectedRoute from './components/ProtectedRoute';
+import LandingPage from './forms/LandingPage';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +36,8 @@ function App() {
       <Route path='/blog' element={<BlogSection/>} />
       <Route path="/blog/:id" element={<BlogDetails />} />
       <Route path="/login" element={<LogIn/>} />
+      <Route path="/landingpage" element={<LandingPage/>} />
+      
       
       <Route path="/add-blog" element={<ProtectedRoute ><AddBlog/></ProtectedRoute>} />
       <Route path="/preview-blog" element={<ProtectedRoute><PreviewBlog/></ProtectedRoute>} />

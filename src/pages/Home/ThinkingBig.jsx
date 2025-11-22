@@ -3,7 +3,7 @@ import React from "react";
 const ThinkingBig = () => {
   return (
     <section
-      className="relative py-20 bg-gradient-to-tr from-[#c9a75933] via-white 
+      className="relative py-12 bg-gradient-to-tr from-[#c9a75933] via-white 
     to-[#c9a75933] overflow-hidden text-center"
     >
       {/* Background texture */}

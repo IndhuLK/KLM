@@ -34,7 +34,8 @@ const WovenWithCare = () => {
           className="text-2xl md:text-5xl font-bold tracking-tight font-poppins
                      bg-black bg-clip-text text-transparent"
         >
-          Woven with <span className="text-[#2563eb]">Care</span>
+          Woven with <span className="bg-clip-text text-transparent bg-gradient-to-r
+           from-[#2563eb] to-[#c9a759]">Care</span>
         </h2>
 
         <div className="mt-3 mx-auto w-28 h-1 bg-[#c9a759] rounded-full"></div>

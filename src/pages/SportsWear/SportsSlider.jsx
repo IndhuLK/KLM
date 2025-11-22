@@ -56,24 +56,25 @@ const MobileDots = ({ currentSlide, slideCount, goToSlide }) => (
 const SportsSlider = () => {
   const slides = [
     {
-  image: sport1,
-  title: "Move with Confidence.",
-  subtitle: "Premium sportswear designed for comfort, agility, and all-day energy.",
-},
-{
-  image: sport2,
-  title: "Premium Sports Wear for Every Student.",
-  subtitle:
-    "Lightweight, stretchable, and sweat-friendly sports uniforms crafted for daily practice, workouts, and athletic performance.",
-},
+      image: sport2,
+      title: "Premium Sports Wear for Every Student.",
+      subtitle:
+        "Lightweight, stretchable, and sweat-friendly sports uniforms crafted for daily practice, workouts, and athletic performance.",
+    },
+    {
+      image: sport1,
+      title: "Move with Confidence.",
+      subtitle:
+        "Premium sportswear designed for comfort, agility, and all-day energy.",
+    },
 
-// ✅ ID 3 → SPORTS CAP & BELT CONTENT
-{
-  image: sport3,
-  title: "Complete Sports Accessories — Cap & Belt Collection.",
-  subtitle:
-    "Durable school sports caps and belts designed for comfort, style, and match-day confidence.",
-},
+    // ✅ ID 3 → SPORTS CAP & BELT CONTENT
+    {
+      image: sport3,
+      title: "Complete Sports Accessories — Cap & Belt Collection.",
+      subtitle:
+        "Durable school sports caps and belts designed for comfort, style, and match-day confidence.",
+    },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -128,8 +129,10 @@ const SportsSlider = () => {
             {slides[currentSlide].subtitle}
           </p>
 
-          <button className="mt-6 bg-[#c9a759] text-black px-6 py-3 rounded-full 
-          font-semibold text-sm md:text-base shadow-lg">
+          <button
+            className="mt-6 bg-[#c9a759] text-black px-6 py-3 rounded-full 
+          font-semibold text-sm md:text-base shadow-lg"
+          >
             Explore Our Range
           </button>
         </div>

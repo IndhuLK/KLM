@@ -33,7 +33,8 @@ const TransformingTrust = () => {
         {/* Subheading */}
         <h3 className="text-2xl md:text-5xl font-bold text-black mb-6 font-poppins">
           reality for over{" "}
-          <span className="font-bold" style={{ color: "#c9a759" }}>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r
+           from-[#2563eb] to-[#c9a759]">
             15+ years
           </span>
         </h3>

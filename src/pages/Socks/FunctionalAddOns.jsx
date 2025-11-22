@@ -11,7 +11,7 @@ const FunctionalAddOns = () => {
 
   return (
     <section className="w-full mx-auto font-poppins overflow-hidden">
-      <div className="relative overflow-hidden bg-white">
+      <div className="relative overflow-hidden bg-white px-20 py-5">
 
         {/* BACKGROUND GRADIENT */}
         <div
@@ -27,7 +27,7 @@ const FunctionalAddOns = () => {
         <div className="absolute -bottom-20 -right-20 w-72 h-72 md:w-96 md:h-96 rounded-full blur-3xl opacity-20 bg-[#c9a759]" />
 
         {/* MAIN GRID */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 z-10">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 z-10 ">
 
           {/* LEFT TITLE SECTION */}
           <div className="p-6 sm:p-8 md:px-10 flex items-center">
@@ -36,9 +36,10 @@ const FunctionalAddOns = () => {
               font-extrabold text-[#1a1a1a] space-y-1 ">
                 <span className="block">FUNCTIONAL ADD-</span>
                 
-                <span className="block">ONS THAT</span>
-                <span className="block">COMPLETE THE</span>
-                <span className="block text-[#2563eb]">LOOK</span>
+                <span className="block">ONS THAT COMPLETE</span>
+                <span className="">  </span> THE
+                <span className=" bg-clip-text text-transparent bg-gradient-to-r
+                 from-[#2563eb] to-[#c9a759]"> LOOK</span>
               </h2>
 
               <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[#444] max-w-md font-medium">
